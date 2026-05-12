@@ -82,7 +82,11 @@ function setTheme(nextDark: boolean) {
 }
 
 export default function Home() {
-  const dark = useSyncExternalStore(subscribeTheme, getPreferredTheme, () => false);
+  const dark = useSyncExternalStore(
+    subscribeTheme,
+    getPreferredTheme,
+    () => false,
+  );
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const introText = "Oi! Eu sou o ";
   const nameText = "Enzo";
@@ -135,7 +139,11 @@ export default function Home() {
           aria-label="Alternar modo escuro"
           className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background/80 text-foreground shadow-sm backdrop-blur-md transition hover:bg-accent"
         >
-          {dark ? <FaSun className="h-4 w-4" /> : <FaMoon className="h-4 w-4" />}
+          {dark ? (
+            <FaSun className="h-4 w-4" />
+          ) : (
+            <FaMoon className="h-4 w-4" />
+          )}
         </button>
       </div>
 
@@ -151,22 +159,28 @@ export default function Home() {
 
           <h1 className="text-5xl font-bold leading-tight tracking-tight md:text-7xl">
             <span>{typedIntro}</span>
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-hero)" }}>
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: "var(--gradient-hero)" }}
+            >
               {typedName}
             </span>
             <span className="ml-1 inline-block h-[0.9em] w-[2px] translate-y-[0.0em] bg-foreground align-middle animate-caret-blink" />
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg text-muted-foreground italic border-l-4 border-yellow-500 pl-4">
-            "Sometimes it is the people who no one imagines anything of who do the things that no one can imagine."
-            <span className="block text-sm mt-2 not-italic text-muted-foreground/80">— Alan Turing</span>
+            "Sometimes it is the people who no one imagines anything of who do
+            the things that no one can imagine."
+            <span className="block text-sm mt-2 not-italic text-muted-foreground/80">
+              — Alan Turing
+            </span>
           </p>
 
           <div className="mt-10 flex gap-4">
             <button
               onClick={() => {
-                const element = document.getElementById('sobre');
-                element?.scrollIntoView({ behavior: 'smooth' });
+                const element = document.getElementById("sobre");
+                element?.scrollIntoView({ behavior: "smooth" });
               }}
               className="rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:opacity-90"
             >
@@ -174,8 +188,8 @@ export default function Home() {
             </button>
             <button
               onClick={() => {
-                const element = document.getElementById('experiencias');
-                element?.scrollIntoView({ behavior: 'smooth' });
+                const element = document.getElementById("experiencias");
+                element?.scrollIntoView({ behavior: "smooth" });
               }}
               className="rounded-full border border-border px-6 py-3 text-sm font-medium transition hover:bg-accent"
             >
@@ -198,16 +212,29 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-start md:gap-8">
               <div className="flex-1 space-y-8">
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Sou formado em <span className="text-yellow-500 text-foreground font-semibold">Engenharia de Computação na UNIFEI.</span> Tenho experiência como <span className="text-yellow-500 text-foreground font-semibold">Desenvolvedor Full Stack</span> e em automação de processos.
+                  Sou formado em{" "}
+                  <span className="text-yellow-500 text-foreground font-semibold">
+                    Engenharia de Computação na UNIFEI.
+                  </span>{" "}
+                  Tenho experiência como{" "}
+                  <span className="text-yellow-500 text-foreground font-semibold">
+                    Desenvolvedor Full Stack
+                  </span>{" "}
+                  e em automação de processos.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Sou de Guarulhos, descendente de <span className="text-yellow-500 text-foreground font-semibold">Okinawa, Japão.</span>
+                  Sou de Guarulhos, descendente de{" "}
+                  <span className="text-yellow-500 text-foreground font-semibold">
+                    Okinawa, Japão.
+                  </span>
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Sou apaixonado por tecnologia e estou sempre buscando aprender novas habilidades e enfrentar desafios.
+                  Sou apaixonado por tecnologia e estou sempre buscando aprender
+                  novas habilidades e enfrentar desafios.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Atualmente, estou em busca de novas oportunidades no mercado de trabalho.
+                  Atualmente, estou em busca de novas oportunidades no mercado
+                  de trabalho.
                 </p>
                 <div className="flex gap-3 pt-4">
                   <a
@@ -270,7 +297,10 @@ export default function Home() {
                       key={topico}
                       className="text-muted-foreground flex items-start gap-3"
                     >
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full flex-shrink-0" style={{ background: "var(--gradient-hero)" }} />
+                      <span
+                        className="mt-1 h-1.5 w-1.5 rounded-full flex-shrink-0"
+                        style={{ background: "var(--gradient-hero)" }}
+                      />
                       <span className="text-sm">{topico}</span>
                     </li>
                   ))}
@@ -282,7 +312,8 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-border px-6 py-8 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} Criado por Enzo Yukio Chinen. Todos os direitos reservados.
+        © {new Date().getFullYear()} Criado por Enzo Yukio Chinen. Todos os
+        direitos reservados.
       </footer>
     </main>
   );
