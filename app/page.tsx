@@ -228,11 +228,11 @@ export default function Home() {
                   </span>
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Sou apaixonado por tecnologia e estou sempre buscando aprender
+                  Apaixonado por tecnologia e estou sempre buscando aprender
                   novas habilidades e enfrentar desafios.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Atualmente, estou em busca de novas oportunidades no mercado
+                  Atualmente, aprofundando meus conhecimentos e em busca de novas oportunidades no mercado
                   de trabalho.
                 </p>
                 <div className="flex gap-3 pt-4">
